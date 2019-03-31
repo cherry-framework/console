@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(0);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Cherry\Console\ArgvInput;
+use Cherry\Console\Console;
+
+$console = new Console(new ArgvInput());
