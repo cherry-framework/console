@@ -62,6 +62,15 @@ Welcome to
                             
                           Console
 ----------------------------------
+
+help, --help, -h            - Show help.
+    
+server [option] [arguments] - Start PHP Development server.
+       [option]   - Server start options
+            run     - Start server on 127.0.0.1:8000
+            start   - Start server on given address:port
+       [argument] - Additional arguments for option "start" address:port (127.0.0.1:8000)
+            
 EOF;
 
         print $this->_output
