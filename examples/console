@@ -5,7 +5,7 @@ set_time_limit(0);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Cherry\Console\ArgvInput;
 use Cherry\Console\Console;
+use Cherry\Console\Input\ArgvInput;
 
 $console = new Console(new ArgvInput());
