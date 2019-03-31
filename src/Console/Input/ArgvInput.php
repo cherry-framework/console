@@ -10,10 +10,10 @@ class ArgvInput
     {
         if (empty($argv)) {
             $argv = $_SERVER['argv'];
-        }
 
-        // strip the application name
-        array_shift($argv);
+            // strip the application name
+            array_shift($argv);
+        }
 
         $this->_argv = $argv;
     }
