@@ -1,11 +1,36 @@
 <?php
+/**
+ * The file contains ArgvInput class
+ *
+ * PHP version 5
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 
 namespace Cherry\Console\Input;
 
+/**
+ * Class for processing passed CLI arguments.
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 class ArgvInput
 {
     private $_argv;
 
+    /**
+     * ArgvInput constructor.
+     *
+     * @param array $argv Arguments for processing
+     */
     public function __construct($argv = [])
     {
         if (empty($argv)) {
@@ -18,21 +43,43 @@ class ArgvInput
         $this->_argv = $argv;
     }
 
+    /**
+     * Get count of passed arguments.
+     *
+     * @return int
+     */
     public function getArgvCount()
     {
         return count($this->_argv);
     }
 
+    /**
+     * Get passed arguments.
+     *
+     * @return array
+     */
     public function getArgv()
     {
         return $this->_argv;
     }
 
+    /**
+     * Get parsed passed arguments.
+     *
+     * @return array
+     */
     public function getArgvParsed()
     {
         return $this->_parseArgv($this->_argv);
     }
 
+    /**
+     * Parse passed arguments.
+     *
+     * @param array $argv Passed arguments
+     *
+     * @return array
+     */
     private function _parseArgv(array $argv)
     {
         $return = array();
@@ -71,6 +118,13 @@ class ArgvInput
         return $return;
     }
 
+    /**
+     * Get single passed argument value.
+     *
+     * @param string $key Argument key
+     *
+     * @return mixed|null
+     */
     public function get($key)
     {
         if (isset($this->getArgvParsed()[$key])) {
@@ -80,6 +134,14 @@ class ArgvInput
         return null;
     }
 
+    /**
+     * Get passed boolean value.
+     *
+     * @param string $key     Argument key
+     * @param bool   $default Default return value
+     *
+     * @return bool
+     */
     public function getBoolean($key, $default = false)
     {
         if (!isset($this->getArgvParsed()[$key])) {
