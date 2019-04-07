@@ -13,13 +13,13 @@ class Console
     private $_argv;
     private $_argvParsed;
 
-    public function __construct(ArgvInput $argvInput)
+    public function __construct()
     {
-        $this->_argvInput = $argvInput;
+        $this->_argvInput = new ArgvInput();
         $this->_output = new Output();
 
-        $this->_argv = $argvInput->getArgv();
-        $this->_argvParsed = $argvInput->getArgvParsed();
+        $this->_argv = $this->_argvInput->getArgv();
+        $this->_argvParsed = $this->_argvInput->getArgvParsed();
 
         $this->_run();
     }
@@ -27,10 +27,8 @@ class Console
     private function _run()
     {
         $argvInput = $this->_argvInput;
-        $output = $this->_output;
 
         $argv = $this->_argv;
-        $argvParsed = $this->_argvParsed;
 
         if ($argvInput->getArgvCount() == 0 ||
             $argvInput->getBoolean('help') ||
@@ -40,12 +38,17 @@ class Console
             return;
         }
 
-        switch ($argv[0]) {
-            case 'server':
-                $this->_devServer();
-                break;
-            default:
-                $this->_printHelp();
+        $this->_call($argv[0]);
+    }
+
+    private function _call($method)
+    {
+        $method = "_{$method}";
+
+        if (method_exists($this, $method)) {
+            $this->{$method}();
+        } else {
+            $this->_printHelp();
         }
     }
 
@@ -77,7 +80,7 @@ EOF;
             ->text($hello);
     }
 
-    private function _devServer()
+    private function _server()
     {
         $argv = $this->_argv;
 
@@ -85,7 +88,7 @@ EOF;
 
         if (isset($argv[1]) && $argv[1] == 'run') {
             $server = "127.0.0.1:8000";
-        } else if ($argv[1] == 'start') {
+        } else if (isset($argv[1]) && $argv[1] == 'start') {
             if (isset($argv[2])) {
                 $server = $argv[2];
             } else {
