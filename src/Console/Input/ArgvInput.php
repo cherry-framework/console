@@ -71,6 +71,15 @@ class ArgvInput
         return $return;
     }
 
+    public function get($key)
+    {
+        if (isset($this->getArgvParsed()[$key])) {
+            return $this->getArgvParsed()[$key];
+        }
+
+        return null;
+    }
+
     public function getBoolean($key, $default = false)
     {
         if (!isset($this->getArgvParsed()[$key])) {
