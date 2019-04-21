@@ -4,8 +4,230 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e881f7666f6fa13fbeaeb046bc4f3ab",
-    "packages": [],
+    "content-hash": "b0ac8ec1edbf6b91e7ec7fe8f7c0db2e",
+    "packages": [
+        {
+            "name": "cherry-project/core",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cherry-framework/core.git",
+                "reference": "d842cdeed05700e9fc11fc4143d0835f99978873"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cherry-framework/core/zipball/d842cdeed05700e9fc11fc4143d0835f99978873",
+                "reference": "d842cdeed05700e9fc11fc4143d0835f99978873",
+                "shasum": ""
+            },
+            "require": {
+                "cherry-project/router": "^1.0",
+                "cherry-project/templater": "^1.0",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cherry\\": "Cherry/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "http://www.abgeo.ga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Core for Cherry-project",
+            "homepage": "https://github.com/ABGEO07/cherry-core",
+            "keywords": [
+                "cherry",
+                "core"
+            ],
+            "time": "2019-04-21T16:50:08+00:00"
+        },
+        {
+            "name": "cherry-project/request",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cherry-framework/request.git",
+                "reference": "83e3a4929b70b40afb1c45dec11415d412041dfd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cherry-framework/request/zipball/83e3a4929b70b40afb1c45dec11415d412041dfd",
+                "reference": "83e3a4929b70b40afb1c45dec11415d412041dfd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cherry\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "http://www.abgeo.ga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cherry-project Request class",
+            "homepage": "https://github.com/ABGEO07/cherry-request",
+            "keywords": [
+                "cherry",
+                "request"
+            ],
+            "time": "2019-03-28T15:56:41+00:00"
+        },
+        {
+            "name": "cherry-project/response",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cherry-framework/response.git",
+                "reference": "3ec39fa1ac828162e574b55a945b3228cfb19ddf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cherry-framework/response/zipball/3ec39fa1ac828162e574b55a945b3228cfb19ddf",
+                "reference": "3ec39fa1ac828162e574b55a945b3228cfb19ddf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cherry\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "http://www.abgeo.ga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cherry-project Response class",
+            "homepage": "https://github.com/ABGEO07/cherry-response",
+            "keywords": [
+                "cherry",
+                "response"
+            ],
+            "time": "2019-03-28T16:20:49+00:00"
+        },
+        {
+            "name": "cherry-project/router",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cherry-framework/router.git",
+                "reference": "28292277f7930f9a42a8242cc82d2e7c2a9d4f0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cherry-framework/router/zipball/28292277f7930f9a42a8242cc82d2e7c2a9d4f0d",
+                "reference": "28292277f7930f9a42a8242cc82d2e7c2a9d4f0d",
+                "shasum": ""
+            },
+            "require": {
+                "cherry-project/request": "v1.0.1",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cherry\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "http://www.abgeo.ga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cherry-project Router",
+            "homepage": "https://github.com/ABGEO07/cherry-router",
+            "keywords": [
+                "cherry",
+                "router"
+            ],
+            "time": "2019-03-28T20:22:13+00:00"
+        },
+        {
+            "name": "cherry-project/templater",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cherry-framework/templater.git",
+                "reference": "323b4f0278c32e404c0e893ded8984fef5d11bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cherry-framework/templater/zipball/323b4f0278c32e404c0e893ded8984fef5d11bed",
+                "reference": "323b4f0278c32e404c0e893ded8984fef5d11bed",
+                "shasum": ""
+            },
+            "require": {
+                "cherry-project/response": "v1.0.1",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cherry\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ABGEO",
+                    "email": "takalandzet@gmail.com",
+                    "homepage": "http://www.abgeo.ga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cherry-project Template Engine",
+            "homepage": "https://github.com/ABGEO07/cherry-templater",
+            "keywords": [
+                "cherry",
+                "templating"
+            ],
+            "time": "2019-03-29T08:32:17+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
