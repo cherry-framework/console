@@ -4,7 +4,7 @@ CLI Console for Cherry-project.
 
 [![GitHub license](https://img.shields.io/github/license/cherry-framework/console.svg)](https://github.com/cherry-framework/console/blob/master/LICENSE)
 
-[![GitHub release](https://img.shields.io/github/release/cherry-framework/console.svg)](https://github.com/console/logs-viewer/releases)
+[![GitHub release](https://img.shields.io/github/release/cherry-framework/console.svg)](https://github.com/cherry-framework/console/releases)
 
 [![Packagist Version](https://img.shields.io/packagist/v/cherry-project/console.svg "Packagist Version")](https://packagist.org/packages/cherry-project/console "Packagist Version")
 
@@ -25,14 +25,17 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ## Usage
 
-Import class
+Import classes
 
 ```php
 use Cherry\Console\Console;
+use Cherry\Kernel;
 ```
 
-Create new console instance
+Create new Kernel and Console instance
 ```php
+$app = new Kernel(__DIR__);
+
 $console = new Console();
 ```
 

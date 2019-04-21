@@ -43,7 +43,7 @@ class Output
      */
     public function info($text)
     {
-        return $this->_colorizeString("[INFO] {$text}", 'blue', 'white');
+        return $this->_colorizeString("[INFO] {$text}", CLIColor::B_BLUE, CLIColor::F_WHITE);
     }
 
     /**
@@ -55,7 +55,7 @@ class Output
      */
     public function warning($text)
     {
-        return $this->_colorizeString("[WARNING] {$text}", 'yellow', 'white');
+        return $this->_colorizeString("[WARNING] {$text}", CLIColor::B_YELLOW, CLIColor::F_WHITE);
     }
 
     /**
@@ -67,7 +67,7 @@ class Output
      */
     public function danger($text)
     {
-        return $this->_colorizeString("[ERROR] {$text}", 'red', 'white');
+        return $this->_colorizeString("[ERROR] {$text}", CLIColor::B_RED, CLIColor::F_WHITE);
     }
 
     /**
@@ -79,7 +79,7 @@ class Output
      */
     public function success($text)
     {
-        return $this->_colorizeString("[OK] {$text}", 'green', 'white');
+        return $this->_colorizeString("[OK] {$text}", CLIColor::B_GREEN, CLIColor::F_WHITE);
     }
 
     /**
@@ -103,8 +103,8 @@ class Output
      *
      * @return string Stylized text.
      */
-    private function _colorizeString($text, $background_color = null,
-        $foreground_color = null
+    private function _colorizeString($text, $background_color = '',
+        $foreground_color = ''
     ) {
         return $this->_CLIColor
             ->getColoredString($text, $background_color, $foreground_color)
