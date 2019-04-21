@@ -4,7 +4,7 @@ CLI Console for Cherry-project.
 
 [![GitHub license](https://img.shields.io/github/license/cherry-framework/console.svg)](https://github.com/cherry-framework/console/blob/master/LICENSE)
 
-[![GitHub release](https://img.shields.io/github/release/cherry-framework/console.svg)](https://github.com/console/logs-viewer/releases)
+[![GitHub release](https://img.shields.io/github/release/cherry-framework/console.svg)](https://github.com/cherry-framework/console/releases)
 
 [![Packagist Version](https://img.shields.io/packagist/v/cherry-project/console.svg "Packagist Version")](https://packagist.org/packages/cherry-project/console "Packagist Version")
 
