@@ -13,6 +13,7 @@
 
 namespace Cherry\Console;
 
+use Cherry\Console\Command\Debugger;
 use Cherry\Console\Command\Server;
 use Cherry\Console\Input\ArgvInput;
 use Cherry\Console\Output\Output;
@@ -28,6 +29,7 @@ use Cherry\Console\Output\Output;
  */
 class Console
 {
+    use Debugger;
     use Server;
 
     /** @var ArgvInput $_argvInput */
@@ -86,7 +88,7 @@ class Console
         $method = "_{$method}";
 
         if (method_exists($this, $method)) {
-            $this->{$method}();
+            $this->{$method}($this->_argvInput, $this->_output);
         } else {
             $this->_printHelp();
         }

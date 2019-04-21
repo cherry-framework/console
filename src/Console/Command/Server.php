@@ -2,16 +2,21 @@
 
 namespace Cherry\Console\Command;
 
+use Cherry\Console\Input\ArgvInput;
+use Cherry\Console\Output\Output;
+
 trait Server
 {
     /**
      * Run PHP Development server from CLI
      *
+     * @param ArgvInput $input
+     * @param Output $output
      * @return void
      */
-    private function _server()
+    private function _server(ArgvInput $input, Output $output)
     {
-        $argv = $this->_argv;
+        $argv = $input->getArgv();
 
         $server = null;
 
@@ -31,12 +36,11 @@ trait Server
 
         $info = <<<EOF
         
-{$this->_output->success("Started Cherry Server on  http://{$server}")}
+{$output->success("Started Cherry Server on  http://{$server}")}
 // Quit the server with Ctrl + C.
 EOF;
 
-        print $this->_output
-            ->text($info);
+        print $output->text($info);
 
         echo exec("php -S {$server} -t " . WEB_ROOT);
     }
