@@ -1,0 +1,7 @@
+{
+  "ROUTES_FILE":      "",
+  "CONTROLLERS_PATH": "",
+  "TEMPLATES_PATH":   "",
+  "LOGS_PATH":        "",
+  "WEB_ROOT":         "/"
+}

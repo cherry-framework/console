@@ -25,14 +25,17 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ## Usage
 
-Import class
+Import classes
 
 ```php
 use Cherry\Console\Console;
+use Cherry\Kernel;
 ```
 
-Create new console instance
+Create new Kernel and Console instance
 ```php
+$app = new Kernel(__DIR__);
+
 $console = new Console();
 ```
 

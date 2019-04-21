@@ -4,5 +4,8 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Cherry\Console\Console;
+use Cherry\Kernel;
+
+$app = new Kernel(__DIR__);
 
 $console = new Console();

@@ -155,6 +155,6 @@ EOF;
         print $this->_output
             ->text($info);
 
-        echo exec("php -S {$server} -t " . dirname(dirname(__DIR__)));
+        echo exec("php -S {$server} -t " . WEB_ROOT);
     }
 }
