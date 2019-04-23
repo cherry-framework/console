@@ -32,7 +32,6 @@ class Console
     use Debugger;
     use Server;
 
-    /** @var ArgvInput $_argvInput */
     private $_argvInput;
     private $_output;
 
