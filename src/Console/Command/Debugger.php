@@ -31,17 +31,7 @@ trait Debugger
 
     private function _debugHelp(Output $output)
     {
-        $help = <<<EOF
-Cherry Debugger.
-
-run ./console debug {argument} for debugging {argument} feature.
-
-{argument} values:
-
-    router - Debug application all route.
-          
-EOF;
-
+        $help = file_get_contents(__DIR__.'/Debugger/Docs/help.txt');
         print $output->text($help);
     }
 

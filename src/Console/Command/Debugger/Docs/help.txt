@@ -1,0 +1,7 @@
+Cherry Debugger.
+
+run ./console debug {argument} for debugging {argument} feature.
+
+{argument} values:
+
+    router - Debug application all route.
