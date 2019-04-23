@@ -1,17 +1,22 @@
 {
-  "homepage": {
-    "path": "/",
-    "method": "GET",
-    "action": "Cherry\\Controller\\DefaultController::index"
-  },
-  "add-new-user": {
-    "path": "/addUser",
-    "method": "POST",
-    "action": "Cherry\\Controller\\DefaultController::addUser"
-  },
-  "remove-user": {
-    "path": "/addUSer/{userId}",
-    "method": "DELETE",
-    "action": "Cherry\\Controller\\DefaultController::removeUser"
-  }
+    "homepage": {
+        "path": "/",
+        "method": "GET",
+        "action": "Cherry\\Controller\\DefaultController::index"
+    },
+    "add-new-user": {
+        "path": "/addUser",
+        "method": "POST",
+        "action": "Cherry\\Controller\\DefaultController::addUser"
+    },
+    "remove-user": {
+        "path": "/addUser/{userId}",
+        "method": "DELETE",
+        "action": "Cherry\\Controller\\DefaultController::removeUser"
+    },
+    "hello": {
+        "path": "/hello",
+        "method": "GET",
+        "action": "Cherry\\Controller\\HelloController::hello"
+    }
 }

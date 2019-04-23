@@ -1,0 +1,7 @@
+Cherry Maker.
+
+run ./console make {argument} for creating {argument} feature.
+
+{argument} values:
+
+    controller - Create new Cherry controller.

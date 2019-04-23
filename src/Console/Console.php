@@ -14,6 +14,7 @@
 namespace Cherry\Console;
 
 use Cherry\Console\Command\Debugger;
+use Cherry\Console\Command\Maker;
 use Cherry\Console\Command\Server;
 use Cherry\Console\Input\ArgvInput;
 use Cherry\Console\Output\Output;
@@ -30,6 +31,7 @@ use Cherry\Console\Output\Output;
 class Console
 {
     use Debugger;
+    use Maker;
     use Server;
 
     private $_argvInput;

@@ -1,5 +1,10 @@
 # Cherry-Console Changelog
 
+## [v1.7.0](https://github.com/cherry-framework/console/releases/tag/v1.6.0 "v1.7.0") (2019-04-23)
+
+- Added Cherry features maker (See `./console maker`)
+    - Make controller (`./console make controller`)
+
 ## [v1.6.0](https://github.com/cherry-framework/console/releases/tag/v1.6.0 "v1.6.0") (2019-04-23)
 
 - Added Cherry features debugger (See `./console debug`)
