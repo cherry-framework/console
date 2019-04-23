@@ -39,11 +39,17 @@ trait Maker
 
     private function _makeController(ArgvInput $input, Output $output)
     {
-        print $output->success('Make Controller.');
+        print $output->success('Make Controller.')."\n";
         print $output->text('Enter Controller Name [hello]:');
 
         //Get controller name from stdin
         $controllerTitle = readline() ?: 'hello';
+
+        // Remove spaces
+        $controllerTitle = trim($controllerTitle);
+
+        // If empty, set default value
+        $controllerTitle = $controllerTitle == '' ? 'hello' : $controllerTitle;
 
         // Generate Controller name
         $controllerName = ucfirst($controllerTitle).'Controller';
