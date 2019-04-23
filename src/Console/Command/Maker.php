@@ -111,7 +111,7 @@ trait Maker
             print "\n".$output
                     ->warning("Controller {$controllerTitle} already exists!");
         } else {
-            $templatesPath = __DIR__ . '/Maker/Templates/Controller/';
+            $templatesPath = $this->_templatesPath . '/Controller/';
 
             // Get templates
             $controllerTemplate = file_get_contents(
