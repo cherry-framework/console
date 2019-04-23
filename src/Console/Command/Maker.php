@@ -84,6 +84,6 @@ trait Maker
         );
 
         // Save routes
-        file_put_contents(ROUTES_FILE, json_encode($routes, JSON_PRETTY_PRINT));
+        file_put_contents(ROUTES_FILE, json_encode($routes, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
     }
 }
