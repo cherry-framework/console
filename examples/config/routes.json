@@ -5,7 +5,7 @@
     "action": "Cherry\\Controller\\DefaultController::index"
   },
   "add-new-user": {
-    "path": "/addUSer",
+    "path": "/addUser",
     "method": "POST",
     "action": "Cherry\\Controller\\DefaultController::addUser"
   },
