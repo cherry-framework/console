@@ -20,20 +20,13 @@ trait Debugger
 
     private function _callDebuggerMethod($method, ArgvInput $input, Output $output)
     {
-        $method = $this->_normalizeMethodName($method);
+        $method = '_debug'.ucfirst($method);
 
         if (method_exists($this, $method)) {
             $this->{$method}($input, $output);
         } else {
             $this->_debugHelp($output);
         }
-    }
-
-    private function _normalizeMethodName($method)
-    {
-        $method = strtoupper(substr($method, 0, 1)).substr($method, 1);
-
-        return "_debug{$method}";
     }
 
     private function _debugHelp(Output $output)
