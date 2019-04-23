@@ -1,14 +1,42 @@
 <?php
+/**
+ * The file contains Maker trait
+ *
+ * PHP version 5
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 
 namespace Cherry\Console\Command;
 
 use Cherry\Console\Input\ArgvInput;
 use Cherry\Console\Output\Output;
 
+/**
+ * Maker Trait for Cherry Console.
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 trait Maker
 {
     private $_templatesPath = __DIR__.'/Maker/Templates';
 
+    /**
+     * Run Cherry Features maker.
+     *
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _make(ArgvInput $input, Output $output)
     {
         $argv = $input->getArgv();
@@ -20,12 +48,15 @@ trait Maker
         }
     }
 
-    private function _makeHelp(Output $output)
-    {
-        $help = file_get_contents(__DIR__.'/Maker/Docs/help.txt');
-        print $output->text($help);
-    }
-
+    /**
+     * Call maker by argument.
+     *
+     * @param string    $method Method for calling
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _callMakerMethod($method, ArgvInput $input, Output $output)
     {
         $method = '_make'.ucfirst($method);
@@ -37,6 +68,27 @@ trait Maker
         }
     }
 
+    /**
+     * Get Maker help
+     *
+     * @param Output $output CLI Output interface
+     *
+     * @return void
+     */
+    private function _makeHelp(Output $output)
+    {
+        $help = file_get_contents(__DIR__.'/Maker/Docs/help.txt');
+        print $output->text($help);
+    }
+
+    /**
+     * Make new Cherry Controller.
+     *
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _makeController(ArgvInput $input, Output $output)
     {
         print $output->success('Make Controller.')."\n";
@@ -56,17 +108,28 @@ trait Maker
 
         // Check if controller exists
         if (file_exists(CONTROLLERS_PATH.'/'.$controllerName.'.php')) {
-            print "\n".$output->warning("Controller {$controllerTitle} already exists!");
+            print "\n".$output
+                    ->warning("Controller {$controllerTitle} already exists!");
         } else {
             $templatesPath = __DIR__ . '/Maker/Templates/Controller/';
 
             // Get templates
-            $controllerTemplate = file_get_contents($templatesPath . '/controller.txt');
+            $controllerTemplate = file_get_contents(
+                $templatesPath . '/controller.txt'
+            );
             $templateTemplate = file_get_contents($templatesPath . '/template.txt');
 
             // Replace controller name in templates
-            $controllerTemplate = str_replace(['{controllerName}', '{controllerTitle}'], [$controllerName, $controllerTitle], $controllerTemplate);
-            $templateTemplate = str_replace('{controllerName}', $controllerName, $templateTemplate);
+            $controllerTemplate = str_replace(
+                ['{controllerName}', '{controllerTitle}'],
+                [$controllerName, $controllerTitle],
+                $controllerTemplate
+            );
+            $templateTemplate = str_replace(
+                '{controllerName}',
+                $controllerName,
+                $templateTemplate
+            );
 
             // Create directories if they not found
             if (!file_exists(CONTROLLERS_PATH)) {
@@ -77,8 +140,14 @@ trait Maker
             }
 
             // Write to files
-            file_put_contents(CONTROLLERS_PATH . '/' . $controllerName . '.php', $controllerTemplate);
-            file_put_contents(TEMPLATES_PATH . '/' . $controllerTitle . '/index.templater.php', $templateTemplate);
+            file_put_contents(
+                CONTROLLERS_PATH . '/' . $controllerName . '.php',
+                $controllerTemplate
+            );
+            file_put_contents(
+                TEMPLATES_PATH . '/' . $controllerTitle . '/index.templater.php',
+                $templateTemplate
+            );
 
             // Add route for new controller
 
@@ -94,9 +163,13 @@ trait Maker
             );
 
             // Save routes
-            file_put_contents(ROUTES_FILE, json_encode($routes, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+            file_put_contents(
+                ROUTES_FILE,
+                json_encode($routes, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
+            );
 
-            print "\n" . $output->success("Controller {$controllerTitle} created successfully!");
+            print "\n" . $output
+                    ->success("Controller {$controllerTitle} created successfully!");
         }
     }
 }
