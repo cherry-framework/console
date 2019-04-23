@@ -1,5 +1,5 @@
 {
-  "ROUTES_FILE":      "",
+  "ROUTES_FILE":      "config/routes.json",
   "CONTROLLERS_PATH": "",
   "TEMPLATES_PATH":   "",
   "LOGS_PATH":        "",

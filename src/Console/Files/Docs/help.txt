@@ -1,0 +1,22 @@
+Welcome to
+  ____ _
+ / ___| |__   ___ _ __ _ __ _   _
+| |   | '_ \ / _ \ '__| '__| | | |
+| |___| | | |  __/ |  | |  | |_| |
+ \____|_| |_|\___|_|  |_|   \__, |
+                            |___/
+
+                          Console
+----------------------------------
+
+help, --help, -h - Show help.
+
+server [option] [arguments] - Start PHP Development server.
+       [option]   - Server start options
+            run     - Start server on 127.0.0.1:8000
+          start     - Start server on given address:port
+       [argument] - Additional arguments for option "start" address:port (127.0.0.1:8000)
+
+debug [feature] - Debug Cherry features.
+      [feature] - Feature for debugging
+         router - Debug application all route.

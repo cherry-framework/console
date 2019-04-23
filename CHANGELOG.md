@@ -1,5 +1,10 @@
 # Cherry-Console Changelog
 
+## [v1.6.0](https://github.com/cherry-framework/console/releases/tag/v1.6.0 "v1.6.0") (2019-04-23)
+
+- Added Cherry features debugger (See `./console debug`)
+    - Debug router (`./console debug router`)
+
 ## [v1.5.0](https://github.com/cherry-framework/console/releases/tag/v1.5.0 "v1.5.0") (2019-04-21)
 
 - Use color constants for output color definition;
