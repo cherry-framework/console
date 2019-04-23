@@ -1,12 +1,40 @@
 <?php
+/**
+ * The file contains Debugger trait
+ *
+ * PHP version 5
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 
 namespace Cherry\Console\Command;
 
 use Cherry\Console\Input\ArgvInput;
 use Cherry\Console\Output\Output;
 
+/**
+ * Debugger Trait for Cherry Console.
+ *
+ * @category Library
+ * @package  Cherry
+ * @author   Temuri Takalandze <takalandzet@gmail.com>
+ * @license  https://github.com/cherry-framework/console/blob/master/LICENSE MIT
+ * @link     https://github.com/cherry-framework/console
+ */
 trait Debugger
 {
+    /**
+     * Run Cherry Features debugger.
+     *
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _debug(ArgvInput $input, Output $output)
     {
         $argv = $input->getArgv();
@@ -18,6 +46,15 @@ trait Debugger
         }
     }
 
+    /**
+     * Call debugger by argument.
+     *
+     * @param string    $method Method for calling
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _callDebuggerMethod($method, ArgvInput $input, Output $output)
     {
         $method = '_debug'.ucfirst($method);
@@ -29,12 +66,27 @@ trait Debugger
         }
     }
 
+    /**
+     * Get Debugger help
+     *
+     * @param Output $output CLI Output interface
+     *
+     * @return void
+     */
     private function _debugHelp(Output $output)
     {
         $help = file_get_contents(__DIR__.'/Debugger/Docs/help.txt');
         print $output->text($help);
     }
 
+    /**
+     * Debug Cherry Router.
+     *
+     * @param ArgvInput $input  CLI Input interface
+     * @param Output    $output CLI Output interface
+     *
+     * @return void
+     */
     private function _debugRouter(ArgvInput $input, Output $output)
     {
         echo $output->success('Cherry Router Debugger')."\n\n";
