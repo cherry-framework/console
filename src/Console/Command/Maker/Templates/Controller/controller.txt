@@ -1,0 +1,13 @@
+<?php
+
+namespace Cherry\Controller;
+
+class {controllerName}
+{
+    use ControllerTrait;
+
+    public function hello()
+    {
+        $this->render('{controllerTitle}/index');
+    }
+}
