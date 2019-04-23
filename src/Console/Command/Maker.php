@@ -54,42 +54,49 @@ trait Maker
         // Generate Controller name
         $controllerName = ucfirst($controllerTitle).'Controller';
 
-        $templatesPath = __DIR__.'/Maker/Templates/Controller/';
+        // Check if controller exists
+        if (file_exists(CONTROLLERS_PATH.'/'.$controllerName.'.php')) {
+            print "\n".$output->warning("Controller {$controllerTitle} already exists!");
+        } else {
+            $templatesPath = __DIR__ . '/Maker/Templates/Controller/';
 
-        // Get templates
-        $controllerTemplate = file_get_contents($templatesPath.'/controller.txt');
-        $templateTemplate =   file_get_contents($templatesPath.'/template.txt');
+            // Get templates
+            $controllerTemplate = file_get_contents($templatesPath . '/controller.txt');
+            $templateTemplate = file_get_contents($templatesPath . '/template.txt');
 
-        // Replace controller name in templates
-        $controllerTemplate = str_replace(['{controllerName}', '{controllerTitle}'], [$controllerName, $controllerTitle], $controllerTemplate);
-        $templateTemplate = str_replace('{controllerName}', $controllerName, $templateTemplate);
+            // Replace controller name in templates
+            $controllerTemplate = str_replace(['{controllerName}', '{controllerTitle}'], [$controllerName, $controllerTitle], $controllerTemplate);
+            $templateTemplate = str_replace('{controllerName}', $controllerName, $templateTemplate);
 
-        // Create directories if they not found
-        if (!file_exists(CONTROLLERS_PATH)) {
-            mkdir(CONTROLLERS_PATH, 0755, true);
+            // Create directories if they not found
+            if (!file_exists(CONTROLLERS_PATH)) {
+                mkdir(CONTROLLERS_PATH, 0755, true);
+            }
+            if (!file_exists(TEMPLATES_PATH . '/' . $controllerTitle)) {
+                mkdir(TEMPLATES_PATH . '/' . $controllerTitle, 0755, true);
+            }
+
+            // Write to files
+            file_put_contents(CONTROLLERS_PATH . '/' . $controllerName . '.php', $controllerTemplate);
+            file_put_contents(TEMPLATES_PATH . '/' . $controllerTitle . '/index.templater.php', $templateTemplate);
+
+            // Add route for new controller
+
+            // Get old routes
+            $routes = file_get_contents(ROUTES_FILE);
+            $routes = json_decode($routes, 1);
+
+            // Add new route
+            $routes[$controllerTitle] = array(
+                'path' => '/' . $controllerTitle,
+                'method' => 'GET',
+                'action' => 'Cherry\Controller\\' . $controllerName . '::hello'
+            );
+
+            // Save routes
+            file_put_contents(ROUTES_FILE, json_encode($routes, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+            print "\n" . $output->success("Controller {$controllerTitle} created successfully!");
         }
-        if (!file_exists(TEMPLATES_PATH.'/'.$controllerTitle)) {
-            mkdir(TEMPLATES_PATH.'/'.$controllerTitle, 0755, true);
-        }
-
-        // Write to files
-        file_put_contents(CONTROLLERS_PATH.'/'.$controllerName.'.php', $controllerTemplate);
-        file_put_contents(TEMPLATES_PATH.'/'.$controllerTitle.'/index.templater.php', $templateTemplate);
-
-        // Add route for new controller
-
-        // Get old routes
-        $routes = file_get_contents(ROUTES_FILE);
-        $routes = json_decode($routes, 1);
-
-        // Add new route
-        $routes[$controllerTitle] = array(
-            'path'   => '/'.$controllerTitle,
-            'method' => 'GET',
-            'action' => 'Cherry\Controller\\'.$controllerName.'::hello'
-        );
-
-        // Save routes
-        file_put_contents(ROUTES_FILE, json_encode($routes, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
     }
 }
