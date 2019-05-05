@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0ac8ec1edbf6b91e7ec7fe8f7c0db2e",
+    "content-hash": "f45fe5cc2676ec9488e134848f9edd0a",
     "packages": [
         {
             "name": "cherry-project/core",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cherry-framework/core.git",
-                "reference": "d842cdeed05700e9fc11fc4143d0835f99978873"
+                "reference": "74aada56e7243cbd1c41f3ee9931f75dbfd61186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cherry-framework/core/zipball/d842cdeed05700e9fc11fc4143d0835f99978873",
-                "reference": "d842cdeed05700e9fc11fc4143d0835f99978873",
+                "url": "https://api.github.com/repos/cherry-framework/core/zipball/74aada56e7243cbd1c41f3ee9931f75dbfd61186",
+                "reference": "74aada56e7243cbd1c41f3ee9931f75dbfd61186",
                 "shasum": ""
             },
             "require": {
-                "cherry-project/router": "^1.0",
+                "cherry-project/router": "1.1.*",
                 "cherry-project/templater": "^1.0",
                 "ext-json": "*",
                 "php": ">=5.6.0"
@@ -50,7 +50,7 @@
                 "cherry",
                 "core"
             ],
-            "time": "2019-04-21T16:50:08+00:00"
+            "time": "2019-05-04T15:46:19+00:00"
         },
         {
             "name": "cherry-project/request",
@@ -140,20 +140,20 @@
         },
         {
             "name": "cherry-project/router",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cherry-framework/router.git",
-                "reference": "28292277f7930f9a42a8242cc82d2e7c2a9d4f0d"
+                "reference": "d27010659c31c3288c72ce5fa58c7a79dffeedf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cherry-framework/router/zipball/28292277f7930f9a42a8242cc82d2e7c2a9d4f0d",
-                "reference": "28292277f7930f9a42a8242cc82d2e7c2a9d4f0d",
+                "url": "https://api.github.com/repos/cherry-framework/router/zipball/d27010659c31c3288c72ce5fa58c7a79dffeedf3",
+                "reference": "d27010659c31c3288c72ce5fa58c7a79dffeedf3",
                 "shasum": ""
             },
             "require": {
-                "cherry-project/request": "v1.0.1",
+                "cherry-project/request": "1.0.1",
                 "ext-json": "*",
                 "php": ">=5.6.0"
             },
@@ -176,12 +176,12 @@
                 }
             ],
             "description": "Cherry-project Router",
-            "homepage": "https://github.com/ABGEO07/cherry-router",
+            "homepage": "https://github.com/cherry-framework/router",
             "keywords": [
                 "cherry",
                 "router"
             ],
-            "time": "2019-03-28T20:22:13+00:00"
+            "time": "2019-05-04T15:23:06+00:00"
         },
         {
             "name": "cherry-project/templater",
@@ -235,7 +235,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=5.6.0",
+        "ext-json": "*",
+        "ext-readline": "*"
     },
     "platform-dev": []
 }
