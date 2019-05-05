@@ -1,6 +1,11 @@
 # Cherry-Console Changelog
 
-## [v1.7.0](https://github.com/cherry-framework/console/releases/tag/v1.6.0 "v1.7.0") (2019-04-23)
+## [v1.7.1](https://github.com/cherry-framework/console/releases/tag/v1.7.1 "v1.7.1") (2019-05-05)
+
+- Update to new Cherry Core version.  
+- Remove namespace part from new generated controller route action.  
+
+## [v1.7.0](https://github.com/cherry-framework/console/releases/tag/v1.7.0 "v1.7.0") (2019-04-23)
 
 - Added Cherry features maker (See `./console maker`)
     - Make controller (`./console make controller`)
