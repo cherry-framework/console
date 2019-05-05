@@ -159,7 +159,7 @@ trait Maker
             $routes[$controllerTitle] = array(
                 'path' => '/' . $controllerTitle,
                 'method' => 'GET',
-                'action' => 'Cherry\Controller\\' . $controllerName . '::hello'
+                'action' => $controllerName . '::hello'
             );
 
             // Save routes
